@@ -1,8 +1,53 @@
 import numpy as np
 from numbers import Integral
 
-from sklearn.externals import six
-from sklearn.tree.export import _color_brew, _criterion, _tree
+from sklearn.tree.export import _criterion, _tree
+
+
+def _color_brew(n):
+    """Generate n colors with equally spaced hues.
+
+    Parameters
+    ----------
+    n : int
+        The number of colors required.
+
+    Returns
+    -------
+    color_list : list, length n
+        List of n tuples of form (R, G, B) being the components of each color.
+    """
+    color_list = []
+
+    # Initialize saturation & value; calculate chroma & value shift
+    s, v = 0.75, 0.9
+    c = s * v
+    m = v - c
+
+    if n == 2:
+        h_arr = [2, 210]
+    else:
+        h_arr = np.arange(25, 385, 360. / n).astype(int)
+    for h in h_arr:
+        # Calculate some intermediate values
+        h_bar = h / 60.
+        x = c * (1 - abs((h_bar % 2) - 1))
+        # Initialize RGB with same hue & chroma as our color
+        rgb = [(c, x, 0),
+               (x, c, 0),
+               (0, c, x),
+               (0, x, c),
+               (x, 0, c),
+               (c, 0, x),
+               (c, x, 0)]
+        r, g, b = rgb[int(h_bar)]
+        # Shift the initial RGB values to match value and store
+        rgb = [(int(255 * (r + m))),
+               (int(255 * (g + m))),
+               (int(255 * (b + m)))]
+        color_list.append(rgb)
+
+    return color_list
 
 
 def plot_tree(decision_tree, max_depth=None, feature_names=None,
@@ -185,7 +230,7 @@ class _BaseTreeExporter(object):
         if self.impurity:
             if isinstance(criterion, _criterion.FriedmanMSE):
                 criterion = "friedman_mse"
-            elif not isinstance(criterion, six.string_types):
+            elif not isinstance(criterion, str):
                 criterion = "impurity"
             if labels:
                 node_string += '%s = ' % criterion
