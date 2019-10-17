@@ -15,17 +15,22 @@ which will setup an online machine for you:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/glemaitre/dssp_10_2019/master)
 
-You can locally update a `conda` environment:
 
-``` bash
-$ conda env update -f environment.yml
-```
-
-You can also create a new environment which will be called `dssp` by
-default:
+Alternatively you can create a new conda environment which will be called
+`dssp` by default and whill contain all the packages required to run the
+notebooks:
 
 ``` bash
 $ conda env create -f environment.yml
+$ conda activate dssp
+$ jupyter notebook
+```
+
+You can also update an existing `conda` environment:
+
+
+``` bash
+$ conda env update -f environment.yml
 ```
 
 ## References
