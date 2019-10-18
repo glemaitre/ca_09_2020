@@ -9,5 +9,3 @@ dependencies:
   - nodejs
   - matplotlib
   - ipywidgets
-prefix: /home/ogrisel/miniconda3/envs/dssp
-
