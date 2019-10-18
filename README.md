@@ -21,16 +21,16 @@ Alternatively you can create a new conda environment which will be called
 notebooks:
 
 ``` bash
-$ conda env create -f environment.yml
-$ conda activate dssp
-$ jupyter notebook
+conda env create -f environment.yml
+conda activate dssp
+jupyter notebook
 ```
 
 You can also update an existing `conda` environment:
 
 
 ``` bash
-$ conda env update -f environment.yml
+conda env update -f environment.yml
 ```
 
 ## References
