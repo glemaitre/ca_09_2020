@@ -23,6 +23,7 @@ notebooks:
 ``` bash
 conda env create -f environment.yml
 conda activate dssp
+```
 
 ```bash
 cd path/to/dssp_10_2019
