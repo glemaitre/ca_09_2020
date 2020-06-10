@@ -1,7 +1,10 @@
 import numpy as np
 from numbers import Integral
 
-from sklearn.tree.export import _criterion, _tree
+try:
+    from sklearn.tree.export import _criterion, _tree
+except ImportError:
+    from sklearn.tree._export import _criterion, _tree
 
 
 def _color_brew(n):
