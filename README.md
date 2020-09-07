@@ -1,4 +1,4 @@
-# DSSP 14
+# Data Science Credit Agricole
 
 ## Curriculum
 
@@ -34,7 +34,7 @@ conda activate dssp
 ```
 
 ```bash
-cd path/to/dssp_12_2019
+cd path/to/ca_09_2020
 jupyter notebook
 ```
 
