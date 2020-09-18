@@ -21,8 +21,7 @@ Some intro slides: http://ogrisel.github.io/decks/2017_intro_sklearn
 In case that you have any issues, you click on the binder link below
 which will setup an online machine for you:
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/glemaitre/dssp_12_2019/master)
-
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/glemaitre/ca_09_2020/master)
 
 Alternatively you can create a new conda environment which will be called
 `dssp` by default and whill contain all the packages required to run the
